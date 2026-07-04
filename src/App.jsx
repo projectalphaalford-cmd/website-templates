@@ -2,39 +2,29 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import TemplatePage from './pages/TemplatePage';
 
-// Import all template data
-import * as tuitionCenter from './data/tuition-center';
-import * as danceAcademy from './data/dance-academy';
-import * as school from './data/school';
-import * as gym from './data/gym';
-import * as restaurant from './data/restaurant';
-import * as cafe from './data/cafe';
-import * as stationery from './data/stationery';
-import * as medicalClinic from './data/medical-clinic';
-import * as salon from './data/salon';
-import * as clothingStore from './data/clothing-store';
-import * as electronics from './data/electronics';
-import * as realEstate from './data/real-estate';
-import * as travelAgency from './data/travel-agency';
-import * as photography from './data/photography';
-import * as portfolio from './data/portfolio';
+// Import template data from organized subfolders
+import * as tuitionCenter from './templates/tuition-center/data';
+import * as danceAcademy from './templates/dance-academy/data';
+import * as school from './templates/school/data';
+import * as stationery from './templates/stationery/data';
+import * as restaurant from './templates/restaurant/data';
+import * as gym from './templates/gym/data';
+import * as medicalClinic from './templates/medical-clinic/data';
+import * as salon from './templates/salon/data';
+import * as clothingStore from './templates/clothing-store/data';
+import * as electronics from './templates/electronics/data';
 
 const templates = {
   'tuition-center': tuitionCenter,
   'dance-academy': danceAcademy,
   'school': school,
-  'gym': gym,
-  'restaurant': restaurant,
-  'cafe': cafe,
   'stationery': stationery,
+  'restaurant': restaurant,
+  'gym': gym,
   'medical-clinic': medicalClinic,
   'salon': salon,
   'clothing-store': clothingStore,
   'electronics': electronics,
-  'real-estate': realEstate,
-  'travel-agency': travelAgency,
-  'photography': photography,
-  'portfolio': portfolio,
 };
 
 export default function App() {

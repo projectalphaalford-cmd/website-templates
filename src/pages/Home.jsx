@@ -7,22 +7,17 @@ const templates = [
   { id: 'tuition-center', name: 'Tuition Center', desc: 'Education & tutoring services', color: 'bg-blue-600', icon: '🎓' },
   { id: 'dance-academy', name: 'Dance Academy', desc: 'Dance classes & studios', color: 'bg-pink-600', icon: '💃' },
   { id: 'school', name: 'School', desc: 'Educational institutions', color: 'bg-green-600', icon: '🏫' },
-  { id: 'gym', name: 'Gym', desc: 'Fitness centers & gyms', color: 'bg-orange-600', icon: '💪' },
-  { id: 'restaurant', name: 'Restaurant', desc: 'Fine dining & eateries', color: 'bg-red-700', icon: '🍽️' },
-  { id: 'cafe', name: 'Cafe', desc: 'Coffee shops & cafes', color: 'bg-amber-700', icon: '☕' },
   { id: 'stationery', name: 'Stationery Shop', desc: 'Stationery & art supplies', color: 'bg-teal-600', icon: '✏️' },
+  { id: 'restaurant', name: 'Restaurant', desc: 'Fine dining & eateries', color: 'bg-red-700', icon: '🍽️' },
+  { id: 'gym', name: 'Gym', desc: 'Fitness centers & gyms', color: 'bg-orange-600', icon: '💪' },
   { id: 'medical-clinic', name: 'Medical Clinic', desc: 'Healthcare & clinics', color: 'bg-cyan-600', icon: '🏥' },
   { id: 'salon', name: 'Salon', desc: 'Beauty salons & spas', color: 'bg-rose-600', icon: '💇' },
   { id: 'clothing-store', name: 'Clothing Store', desc: 'Fashion boutiques', color: 'bg-violet-600', icon: '👗' },
   { id: 'electronics', name: 'Electronics Shop', desc: 'Tech & electronics', color: 'bg-blue-700', icon: '📱' },
-  { id: 'real-estate', name: 'Real Estate', desc: 'Property & realty', color: 'bg-emerald-600', icon: '🏠' },
-  { id: 'travel-agency', name: 'Travel Agency', desc: 'Travel & tours', color: 'bg-sky-600', icon: '✈️' },
-  { id: 'photography', name: 'Photography Studio', desc: 'Photography services', color: 'bg-zinc-800', icon: '📷' },
-  { id: 'portfolio', name: 'Portfolio', desc: 'Personal portfolio', color: 'bg-indigo-600', icon: '👤' },
 ];
 
 const features = [
-  { icon: Palette, title: '15 Unique Designs', desc: 'Each template is uniquely styled for its industry with custom color schemes.' },
+  { icon: Palette, title: '10 Unique Designs', desc: 'Each template is uniquely styled for its industry with custom color schemes.' },
   { icon: Smartphone, title: 'Fully Responsive', desc: 'Every template looks perfect on desktop, tablet, and mobile devices.' },
   { icon: Code, title: 'Easy to Customize', desc: 'Clean, modular React components with Tailwind CSS. Edit content in data files.' },
 ];
@@ -36,20 +31,20 @@ export default function Home() {
         <Container className="relative z-10">
           <div className="mx-auto max-w-3xl text-center">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white/90 backdrop-blur-sm">
-              🚀 15 Templates Ready to Deploy
+              🚀 10 Templates Ready to Deploy
             </div>
             <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
               Professional Website Templates
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80">
-              Modern, production-ready templates for local businesses. Built with React, Vite, and Tailwind CSS. Deploy to Vercel in under 2 minutes.
+              Modern, production-ready templates for local businesses. Built with React, Vite, and Tailwind CSS.
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Button href="#templates" variant="white" size="lg">
                 Browse Templates <ArrowRight size={20} />
               </Button>
               <a
-                href="https://github.com/yourusername/business-templates"
+                href="https://github.com/projectalphaalford-cmd/website-templates"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg border-2 border-white/30 px-8 py-4 text-lg font-semibold text-white transition-colors hover:bg-white/10"
@@ -84,10 +79,9 @@ export default function Home() {
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">Choose Your Template</h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600">
-              Click any template to preview it. Each includes Hero, About, Services, Gallery, Testimonials, FAQ, Contact, Maps, WhatsApp, and Footer.
+              Each includes Hero, About, Services, Gallery, Testimonials, FAQ, Contact, Maps, WhatsApp, and Footer.
             </p>
           </div>
-
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {templates.map((t) => (
               <Link
@@ -103,8 +97,6 @@ export default function Home() {
                 <div className="mt-4 flex items-center gap-1 text-sm font-medium text-indigo-600">
                   Preview <ArrowRight size={16} />
                 </div>
-
-                {/* Color indicator */}
                 <div className={`absolute right-0 top-0 h-1 w-full ${t.color}`} />
               </Link>
             ))}
@@ -119,7 +111,7 @@ export default function Home() {
             <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">Get Started in Minutes</h2>
             <div className="mt-12 grid gap-8 text-left">
               {[
-                { step: '01', title: 'Clone the Repository', desc: 'git clone https://github.com/yourusername/business-templates.git && cd business-templates' },
+                { step: '01', title: 'Clone the Repository', desc: 'git clone https://github.com/projectalphaalford-cmd/website-templates.git && cd website-templates' },
                 { step: '02', title: 'Install Dependencies', desc: 'npm install' },
                 { step: '03', title: 'Run Locally', desc: 'npm run dev — Opens at http://localhost:3000' },
                 { step: '04', title: 'Deploy to Vercel', desc: 'Click "Deploy" or run: npx vercel --prod' },
