@@ -761,7 +761,7 @@ function ContactSection() {
                     </div>
                     <span>triosbyaaa1807@gmail.com</span>
                   </a>
-                  <a href="tel:+91989005950" className="flex items-center gap-3 text-sm text-text-secondary hover:text-primary transition-colors">
+                  <a href="tel:+919890005950" className="flex items-center gap-3 text-sm text-text-secondary hover:text-primary transition-colors">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/5 text-primary">
                       <Phone size={18} />
                     </div>
@@ -784,7 +784,7 @@ function ContactSection() {
                 <h4 className="font-bold text-text">Prefer WhatsApp?</h4>
                 <p className="mt-2 text-sm text-text-secondary">Chat with us directly on WhatsApp for a faster response.</p>
                 <a
-                  href="https://wa.me/91989005950?text=Hi%20Trios!%20I%20want%20to%20build%20a%20website%20for%20my%20business."
+                  href="https://wa.me/919890005950?text=Hi%20Trios!%20I%20want%20to%20build%20a%20website%20for%20my%20business."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-4 inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-[#20bd5a] hover:shadow-lg"
@@ -819,10 +819,10 @@ function Footer() {
               <a href="mailto:triosbyaaa1807@gmail.com" className="flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-800 text-zinc-400 transition-all hover:bg-primary hover:text-white" aria-label="Email">
                 <Mail size={16} />
               </a>
-              <a href="tel:+91989005950" className="flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-800 text-zinc-400 transition-all hover:bg-primary hover:text-white" aria-label="Phone">
+              <a href="tel:+919890005950" className="flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-800 text-zinc-400 transition-all hover:bg-primary hover:text-white" aria-label="Phone">
                 <Phone size={16} />
               </a>
-              <a href="https://wa.me/91989005950" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-800 text-zinc-400 transition-all hover:bg-[#25D366] hover:text-white" aria-label="WhatsApp">
+              <a href="https://wa.me/919890005950" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-800 text-zinc-400 transition-all hover:bg-[#25D366] hover:text-white" aria-label="WhatsApp">
                 <MessageCircle size={16} />
               </a>
             </div>
@@ -897,7 +897,7 @@ function FloatingActions() {
     <>
       {/* WhatsApp */}
       <a
-        href="https://wa.me/91989005950?text=Hi%20Trios!%20I%20want%20to%20build%20a%20website%20for%20my%20business."
+        href="https://wa.me/919890005950?text=Hi%20Trios!%20I%20want%20to%20build%20a%20website%20for%20my%20business."
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-[#25D366]/30 transition-all duration-200 hover:scale-110 hover:shadow-xl"
@@ -908,7 +908,7 @@ function FloatingActions() {
 
       {/* Call */}
       <a
-        href="tel:+91989005950"
+        href="tel:+919890005950"
         className="fixed bottom-[5.5rem] right-6 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/30 transition-all duration-200 hover:scale-110 hover:shadow-xl"
         aria-label="Call us"
       >
