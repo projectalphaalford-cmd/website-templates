@@ -577,21 +577,20 @@ function TeamSection() {
 // ===== SECTION: Contact =====
 function ContactSection() {
   const [form, setForm] = useState({
-    name: '', business: '', phone: '', email: '',
-    businessType: '', budget: '', message: '',
+    name: '', email: '', phone: '', business: '',
+    type: '', budget: '', message: '',
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
 
   const validate = () => {
-    if (!form.name.trim()) return 'Name is required.';
-    if (!form.business.trim()) return 'Business name is required.';
+    if (!form.name.trim()) return 'Full Name is required.';
+    if (!form.email.trim()) return 'Email address is required.';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) return 'Please enter a valid email address.';
     if (!form.phone.trim()) return 'Phone number is required.';
     if (!/^[+]?[\d\s()-]{7,20}$/.test(form.phone)) return 'Please enter a valid phone number.';
-    if (!form.email.trim()) return 'Email is required.';
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) return 'Please enter a valid email.';
-    if (!form.businessType) return 'Please select a business type.';
+    if (!form.message.trim()) return 'Project details are required.';
     return '';
   };
 
@@ -602,28 +601,31 @@ function ContactSection() {
     setError('');
     setLoading(true);
 
+    const now = new Date();
+    const time = now.toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', hour12: true });
+
     try {
       const result = await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
-          from_name: form.name,
-          business_name: form.business,
-          phone: form.phone,
+          name: form.name,
           email: form.email,
-          business_type: form.businessType,
+          phone: form.phone,
+          business: form.business,
+          type: form.type,
           budget: form.budget || 'Not specified',
           message: form.message,
-          to_email: 'triosbyaaa1807@gmail.com',
+          time,
         },
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
       if (result.status === 200) {
         setSubmitted(true);
-        setForm({ name: '', business: '', phone: '', email: '', businessType: '', budget: '', message: '' });
+        setForm({ name: '', email: '', phone: '', business: '', type: '', budget: '', message: '' });
       }
     } catch (err) {
-      setError('Failed to send message. Please try again or email us directly.');
+      setError('Failed to send your inquiry. Please check your connection or try again.');
     } finally {
       setLoading(false);
     }
@@ -647,7 +649,7 @@ function ContactSection() {
             </div>
             <h3 className="mt-6 text-2xl font-bold text-text">Thank You!</h3>
             <p className="mt-4 text-lg text-text-secondary">
-              Your request has been received. Team Trios will contact you during business hours.
+              ✅ Thank you! Your inquiry has been sent successfully. We'll contact you soon.
             </p>
             <button
               onClick={() => setSubmitted(false)}
@@ -684,32 +686,32 @@ function ContactSection() {
               <form onSubmit={handleSubmit} className="rounded-2xl border border-border bg-surface-card p-8 space-y-5">
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
-                    <label className="block text-sm font-medium text-text mb-1.5">Name *</label>
+                    <label className="block text-sm font-medium text-text mb-1.5">Full Name *</label>
                     <input type="text" value={form.name} onChange={handleChange('name')}
-                      className="w-full rounded-xl border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-secondary/60 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="Your name" />
+                      className="w-full rounded-xl border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-secondary/60 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="Your full name" />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-text mb-1.5">Business Name *</label>
-                    <input type="text" value={form.business} onChange={handleChange('business')}
-                      className="w-full rounded-xl border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-secondary/60 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="Your business" />
-                  </div>
-                </div>
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <div>
-                    <label className="block text-sm font-medium text-text mb-1.5">Phone *</label>
-                    <input type="tel" value={form.phone} onChange={handleChange('phone')}
-                      className="w-full rounded-xl border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-secondary/60 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="+91 98765 43210" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-text mb-1.5">Email *</label>
+                    <label className="block text-sm font-medium text-text mb-1.5">Email Address *</label>
                     <input type="email" value={form.email} onChange={handleChange('email')}
                       className="w-full rounded-xl border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-secondary/60 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="you@example.com" />
                   </div>
                 </div>
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
-                    <label className="block text-sm font-medium text-text mb-1.5">Business Type *</label>
-                    <select value={form.businessType} onChange={handleChange('businessType')}
+                    <label className="block text-sm font-medium text-text mb-1.5">Phone Number *</label>
+                    <input type="tel" value={form.phone} onChange={handleChange('phone')}
+                      className="w-full rounded-xl border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-secondary/60 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="+91 98765 43210" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-text mb-1.5">Business Name</label>
+                    <input type="text" value={form.business} onChange={handleChange('business')}
+                      className="w-full rounded-xl border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-secondary/60 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="Your business name" />
+                  </div>
+                </div>
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <div>
+                    <label className="block text-sm font-medium text-text mb-1.5">Business Type</label>
+                    <select value={form.type} onChange={handleChange('type')}
                       className="w-full rounded-xl border border-border bg-surface px-4 py-3 text-sm text-text focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all">
                       <option value="">Select type...</option>
                       {businessTypes.map(t => <option key={t} value={t}>{t}</option>)}
@@ -728,13 +730,20 @@ function ContactSection() {
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-text mb-1.5">Message</label>
+                  <label className="block text-sm font-medium text-text mb-1.5">Project Details *</label>
                   <textarea rows={3} value={form.message} onChange={handleChange('message')}
-                    className="w-full rounded-xl border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-secondary/60 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none" placeholder="Tell us about your project..." />
+                    className="w-full rounded-xl border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-secondary/60 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none" placeholder="Tell us about your project, goals, and requirements..." />
                 </div>
                 {error && (
                   <div className="rounded-xl bg-red-500/10 border border-red-500/20 px-4 py-3 text-sm text-red-600 dark:text-red-400">
-                    {error}
+                    <p>{error}</p>
+                    <button
+                      type="button"
+                      onClick={() => setError('')}
+                      className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-red-600 dark:text-red-400 hover:underline"
+                    >
+                      Retry
+                    </button>
                   </div>
                 )}
                 <button
