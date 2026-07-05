@@ -17,7 +17,7 @@ export default function TemplatePage({ data }) {
   }, [data.id]);
 
   return (
-    <div className={data.theme || ''}>
+    <div className={`${data.theme || ''}`}>
       <Navbar brand={data.brand} navLinks={data.navLinks} />
       <main>
         <section id="home">

@@ -2,177 +2,152 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ===== TRIOS BRAND THEME (Default) ===== */
+:root {
+  --color-primary: 99 102 241;
+  --color-primary-light: 129 140 248;
+  --color-primary-dark: 79 70 229;
+  --color-primary-muted: 224 231 255;
+  --color-accent: 244 63 94;
+  --color-accent-light: 251 113 133;
+  --color-surface: 255 255 255;
+  --color-surface-alt: 249 250 251;
+  --color-surface-card: 255 255 255;
+  --color-text: 24 24 27;
+  --color-text-secondary: 113 113 122;
+  --color-border: 228 228 231;
+  --color-glass: 255 255 255;
+  --color-glass-border: 255 255 255;
+}
+
+.dark {
+  --color-primary: 129 140 248;
+  --color-primary-light: 165 180 252;
+  --color-primary-dark: 99 102 241;
+  --color-primary-muted: 30 27 75;
+  --color-accent: 251 113 133;
+  --color-accent-light: 244 63 94;
+  --color-surface: 9 9 11;
+  --color-surface-alt: 24 24 27;
+  --color-surface-card: 39 39 42;
+  --color-text: 244 244 245;
+  --color-text-secondary: 161 161 170;
+  --color-border: 63 63 70;
+  --color-glass: 255 255 255 / 0.08;
+  --color-glass-border: 255 255 255 / 0.12;
+}
+
+/* Template themes preserved */
 @layer base {
-  /* Theme: Tuition Center (Blue) */
-  .theme-tuition-center {
-    --color-brand: 37 99 235;
-    --color-brand-light: 59 130 246;
-    --color-brand-dark: 29 78 216;
-    --color-brand-muted: 191 219 254;
-    --color-surface: 255 255 255;
-    --color-surface-alt: 248 250 252;
-  }
-
-  /* Theme: Dance Academy (Pink) */
-  .theme-dance-academy {
-    --color-brand: 219 39 119;
-    --color-brand-light: 244 114 182;
-    --color-brand-dark: 190 24 93;
-    --color-brand-muted: 251 207 232;
-    --color-surface: 255 255 255;
-    --color-surface-alt: 253 242 248;
-  }
-
-  /* Theme: School (Green) */
-  .theme-school {
-    --color-brand: 22 163 74;
-    --color-brand-light: 74 222 128;
-    --color-brand-dark: 21 128 61;
-    --color-brand-muted: 187 247 208;
-    --color-surface: 255 255 255;
-    --color-surface-alt: 240 253 244;
-  }
-
-  /* Theme: Gym (Orange) */
-  .theme-gym {
-    --color-brand: 234 88 12;
-    --color-brand-light: 251 146 60;
-    --color-brand-dark: 194 65 12;
-    --color-brand-muted: 254 215 170;
-    --color-surface: 255 255 255;
-    --color-surface-alt: 255 247 237;
-  }
-
-  /* Theme: Restaurant (Red) */
-  .theme-restaurant {
-    --color-brand: 185 28 28;
-    --color-brand-light: 239 68 68;
-    --color-brand-dark: 153 27 27;
-    --color-brand-muted: 254 202 202;
-    --color-surface: 255 255 255;
-    --color-surface-alt: 254 242 242;
-  }
-
-  /* Theme: Cafe (Amber) */
-  .theme-cafe {
-    --color-brand: 180 83 9;
-    --color-brand-light: 245 158 11;
-    --color-brand-dark: 146 64 14;
-    --color-brand-muted: 252 231 156;
-    --color-surface: 253 250 242;
-    --color-surface-alt: 251 243 224;
-  }
-
-  /* Theme: Stationery (Teal) */
-  .theme-stationery {
-    --color-brand: 13 148 136;
-    --color-brand-light: 45 212 191;
-    --color-brand-dark: 15 118 110;
-    --color-brand-muted: 167 243 208;
-    --color-surface: 255 255 255;
-    --color-surface-alt: 240 253 250;
-  }
-
-  /* Theme: Medical Clinic (Cyan) */
-  .theme-medical-clinic {
-    --color-brand: 8 145 178;
-    --color-brand-light: 34 211 238;
-    --color-brand-dark: 14 116 144;
-    --color-brand-muted: 165 243 252;
-    --color-surface: 255 255 255;
-    --color-surface-alt: 236 254 255;
-  }
-
-  /* Theme: Salon (Rose) */
-  .theme-salon {
-    --color-brand: 225 29 72;
-    --color-brand-light: 244 63 94;
-    --color-brand-dark: 190 18 60;
-    --color-brand-muted: 254 205 211;
-    --color-surface: 255 255 255;
-    --color-surface-alt: 255 241 242;
-  }
-
-  /* Theme: Clothing Store (Violet) */
-  .theme-clothing-store {
-    --color-brand: 124 58 237;
-    --color-brand-light: 167 139 250;
-    --color-brand-dark: 109 40 217;
-    --color-brand-muted: 221 214 254;
-    --color-surface: 255 255 255;
-    --color-surface-alt: 250 245 255;
-  }
-
-  /* Theme: Electronics (Blue-700) */
-  .theme-electronics {
-    --color-brand: 29 78 216;
-    --color-brand-light: 59 130 246;
-    --color-brand-dark: 30 64 175;
-    --color-brand-muted: 191 219 254;
-    --color-surface: 255 255 255;
-    --color-surface-alt: 239 246 255;
-  }
-
-  /* Theme: Real Estate (Emerald) */
-  .theme-real-estate {
-    --color-brand: 5 150 105;
-    --color-brand-light: 52 211 153;
-    --color-brand-dark: 4 120 87;
-    --color-brand-muted: 167 243 208;
-    --color-surface: 255 255 255;
-    --color-surface-alt: 236 253 245;
-  }
-
-  /* Theme: Travel Agency (Sky) */
-  .theme-travel-agency {
-    --color-brand: 2 132 199;
-    --color-brand-light: 56 189 248;
-    --color-brand-dark: 3 105 161;
-    --color-brand-muted: 186 230 253;
-    --color-surface: 255 255 255;
-    --color-surface-alt: 240 249 255;
-  }
-
-  /* Theme: Photography (Zinc) */
-  .theme-photography {
-    --color-brand: 39 39 42;
-    --color-brand-light: 113 113 122;
-    --color-brand-dark: 24 24 27;
-    --color-brand-muted: 212 212 216;
-    --color-surface: 255 255 255;
-    --color-surface-alt: 250 250 250;
-  }
-
-  /* Theme: Portfolio (Indigo) */
-  .theme-portfolio {
-    --color-brand: 79 70 229;
-    --color-brand-light: 129 140 248;
-    --color-brand-dark: 67 56 202;
-    --color-brand-muted: 199 210 254;
-    --color-surface: 255 255 255;
-    --color-surface-alt: 238 242 255;
-  }
+  .theme-tuition-center { --color-brand: 37 99 235; --color-brand-light: 96 165 250; --color-brand-dark: 29 78 216; --color-brand-muted: 219 234 254; --color-surface: 255 255 255; --color-surface-alt: 248 250 252; }
+  .theme-dance-academy { --color-brand: 219 39 119; --color-brand-light: 244 114 182; --color-brand-dark: 190 24 93; --color-brand-muted: 251 207 232; --color-surface: 255 255 255; --color-surface-alt: 253 242 248; }
+  .theme-school { --color-brand: 22 163 74; --color-brand-light: 74 222 128; --color-brand-dark: 21 128 61; --color-brand-muted: 220 252 231; --color-surface: 255 255 255; --color-surface-alt: 240 253 244; }
+  .theme-gym { --color-brand: 234 88 12; --color-brand-light: 251 146 60; --color-brand-dark: 194 65 12; --color-brand-muted: 255 237 213; --color-surface: 255 255 255; --color-surface-alt: 255 247 237; }
+  .theme-restaurant { --color-brand: 185 28 28; --color-brand-light: 239 68 68; --color-brand-dark: 153 27 27; --color-brand-muted: 254 202 202; --color-surface: 255 255 255; --color-surface-alt: 254 242 242; }
+  .theme-cafe { --color-brand: 180 83 9; --color-brand-light: 245 158 11; --color-brand-dark: 146 64 14; --color-brand-muted: 254 243 199; --color-surface: 255 255 255; --color-surface-alt: 255 251 235; }
+  .theme-stationery { --color-brand: 13 148 136; --color-brand-light: 45 212 191; --color-brand-dark: 15 118 110; --color-brand-muted: 204 251 241; --color-surface: 255 255 255; --color-surface-alt: 240 253 250; }
+  .theme-medical-clinic { --color-brand: 6 182 212; --color-brand-light: 34 211 238; --color-brand-dark: 8 145 178; --color-brand-muted: 207 250 254; --color-surface: 255 255 255; --color-surface-alt: 236 254 255; }
+  .theme-salon { --color-brand: 225 29 72; --color-brand-light: 244 63 94; --color-brand-dark: 190 18 60; --color-brand-muted: 255 205 213; --color-surface: 255 255 255; --color-surface-alt: 255 241 242; }
+  .theme-clothing-store { --color-brand: 139 92 246; --color-brand-light: 167 139 250; --color-brand-dark: 124 58 237; --color-brand-muted: 237 233 254; --color-surface: 255 255 255; --color-surface-alt: 245 243 255; }
+  .theme-electronics { --color-brand: 29 78 216; --color-brand-light: 59 130 246; --color-brand-dark: 30 64 175; --color-brand-muted: 219 234 254; --color-surface: 255 255 255; --color-surface-alt: 239 246 255; }
+  .theme-real-estate { --color-brand: 5 150 105; --color-brand-light: 52 211 153; --color-brand-dark: 4 120 87; --color-brand-muted: 209 250 229; --color-surface: 255 255 255; --color-surface-alt: 236 253 245; }
+  .theme-travel-agency { --color-brand: 2 132 199; --color-brand-light: 56 189 248; --color-brand-dark: 3 105 161; --color-brand-muted: 186 230 253; --color-surface: 255 255 255; --color-surface-alt: 240 249 255; }
+  .theme-photography { --color-brand: 113 113 122; --color-brand-light: 161 161 170; --color-brand-dark: 82 82 91; --color-brand-muted: 228 228 231; --color-surface: 255 255 255; --color-surface-alt: 250 250 250; }
+  .theme-portfolio { --color-brand: 99 102 241; --color-brand-light: 129 140 248; --color-brand-dark: 79 70 229; --color-brand-muted: 224 231 255; --color-surface: 255 255 255; --color-surface-alt: 248 250 252; }
 }
 
 @layer base {
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
-    @apply bg-surface text-zinc-800 font-body;
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: rgb(var(--color-surface));
+    color: rgb(var(--color-text));
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  }
+  ::selection {
+    background-color: rgb(var(--color-primary) / 0.3);
+  }
+  .dark ::selection {
+    background-color: rgb(var(--color-primary) / 0.4);
   }
 }
 
 @layer components {
-  .reveal {
+  .glass {
+    background: rgb(var(--color-glass));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgb(var(--color-glass-border) / 0.18);
+  }
+  .glass-strong {
+    background: rgb(var(--color-glass));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgb(var(--color-glass-border) / 0.25);
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, rgb(var(--color-primary)), rgb(var(--color-accent)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .gradient-text-primary {
+    background: linear-gradient(135deg, rgb(var(--color-primary)), rgb(var(--color-primary-light)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -12px rgb(0 0 0 / 0.15);
+  }
+  .dark .card-hover:hover {
+    box-shadow: 0 20px 40px -12px rgb(0 0 0 / 0.4);
+  }
+  .animate-on-scroll {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .reveal.visible {
+  .animate-on-scroll.visible {
     opacity: 1;
     transform: translateY(0);
   }
-  .reveal-delay-1 { transition-delay: 0.1s; }
-  .reveal-delay-2 { transition-delay: 0.2s; }
-  .reveal-delay-3 { transition-delay: 0.3s; }
-  .reveal-delay-4 { transition-delay: 0.4s; }
+}
+
+/* Loading spinner */
+.loader {
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgb(var(--color-border));
+  border-top-color: rgb(var(--color-primary));
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--color-text-secondary) / 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--color-text-secondary) / 0.5);
 }

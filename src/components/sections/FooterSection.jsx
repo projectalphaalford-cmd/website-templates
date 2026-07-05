@@ -15,7 +15,7 @@ export default function FooterSection({ footer, social }) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-zinc-900 text-zinc-400">
+    <footer className="bg-zinc-900 text-zinc-400 dark:bg-black">
       <Container className="py-12 md:py-16">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
@@ -88,7 +88,7 @@ export default function FooterSection({ footer, social }) {
             &copy; {year} {footer.brandName}. All rights reserved.
           </p>
           <p className="mt-2 text-xs text-zinc-600">
-            Made with <Heart size={12} className="inline text-red-500" /> using Business Templates
+            Made with <Heart size={12} className="inline text-red-500" /> by Trios
           </p>
         </div>
       </Container>

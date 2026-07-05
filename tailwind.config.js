@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -10,19 +11,38 @@ export default {
           dark: 'rgb(var(--color-brand-dark) / <alpha-value>)',
           muted: 'rgb(var(--color-brand-muted) / <alpha-value>)',
         },
+        primary: {
+          DEFAULT: 'rgb(var(--color-primary) / <alpha-value>)',
+          light: 'rgb(var(--color-primary-light) / <alpha-value>)',
+          dark: 'rgb(var(--color-primary-dark) / <alpha-value>)',
+          muted: 'rgb(var(--color-primary-muted) / <alpha-value>)',
+        },
+        accent: {
+          DEFAULT: 'rgb(var(--color-accent) / <alpha-value>)',
+          light: 'rgb(var(--color-accent-light) / <alpha-value>)',
+        },
         surface: {
           DEFAULT: 'rgb(var(--color-surface) / <alpha-value>)',
           alt: 'rgb(var(--color-surface-alt) / <alpha-value>)',
+          card: 'rgb(var(--color-surface-card) / <alpha-value>)',
         },
+        text: {
+          DEFAULT: 'rgb(var(--color-text) / <alpha-value>)',
+          secondary: 'rgb(var(--color-text-secondary) / <alpha-value>)',
+        },
+        border: 'rgb(var(--color-border) / <alpha-value>)',
       },
       fontFamily: {
-        heading: ['"Inter"', 'system-ui', 'sans-serif'],
+        heading: ['"Plus Jakarta Sans"', '"Inter"', 'system-ui', 'sans-serif'],
         body: ['"Inter"', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out forwards',
         'slide-up': 'slideUp 0.6s ease-out forwards',
         'slide-down': 'slideDown 0.3s ease-out forwards',
+        'scale-in': 'scaleIn 0.3s ease-out forwards',
+        'float': 'float 3s ease-in-out infinite',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       keyframes: {
         fadeIn: {
@@ -36,6 +56,14 @@ export default {
         slideDown: {
           '0%': { opacity: '0', transform: 'translateY(-10px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        scaleIn: {
+          '0%': { opacity: '0', transform: 'scale(0.95)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
         },
       },
     },

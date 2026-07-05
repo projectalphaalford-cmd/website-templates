@@ -42,11 +42,14 @@ export default function App() {
       <Route
         path="*"
         element={
-          <div className="flex min-h-screen items-center justify-center bg-zinc-50">
+          <div className="flex min-h-screen items-center justify-center bg-surface text-text dark:bg-zinc-950">
             <div className="text-center">
-              <h1 className="text-6xl font-bold text-zinc-300">404</h1>
-              <p className="mt-4 text-lg text-zinc-600">Template not found</p>
-              <a href="/" className="mt-6 inline-block rounded-lg bg-indigo-600 px-6 py-3 text-white">
+              <h1 className="text-8xl font-black gradient-text">404</h1>
+              <p className="mt-4 text-lg text-text-secondary">Page not found</p>
+              <a
+                href="/"
+                className="mt-8 inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-3 text-lg font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-xl hover:shadow-primary/30"
+              >
                 Back to Home
               </a>
             </div>
