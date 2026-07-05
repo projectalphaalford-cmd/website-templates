@@ -6,7 +6,7 @@ import {
   MessageCircle, Phone, Mail, ExternalLink, Zap, Shield,
   Palette, Smartphone, BarChart3, Globe, Code, Lightbulb,
   Clock, Heart, MapPin, Send, Loader2, Quote,
-  Layers, Target, Award, Users, Rocket, Eye,
+  Layers, Target, Award, Users, Rocket, Eye, Search,
   Menu, X, ChevronDown,
 } from 'lucide-react';
 import Container from '../components/ui/Container';
