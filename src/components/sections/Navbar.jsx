@@ -144,8 +144,14 @@ export default function Navbar({ brand, navLinks = [], transparent = false }) {
             )}
           </Link>
 
-          {/* Desktop Nav */}
           <div className="hidden items-center gap-1 md:flex">
+            <Link
+              to="/"
+              className="rounded-lg px-3 py-2 text-xs font-semibold uppercase tracking-wider text-primary transition-all hover:bg-primary/10"
+            >
+              ← Back to Trios
+            </Link>
+            <div className="mx-1 h-4 w-px bg-border" />
             {navLinks.map((link) => (
               <a
                 key={link.href || link.label}

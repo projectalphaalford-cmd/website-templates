@@ -124,44 +124,48 @@ function HeroSection() {
 
       <Container className="relative z-10">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <AnimateOnScroll>
-              <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary">
-                <Sparkles size={14} />
-                Premium Web Agency
+          <AnimateOnScroll>
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary">
+              <Sparkles size={14} />
+              Premium Web Agency
+            </div>
+            <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-text sm:text-5xl md:text-6xl lg:text-7xl">
+              Trios — Modern Websites for{' '}
+              <span className="gradient-text">Local Businesses</span>
+            </h1>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-text-secondary">
+              We build modern, mobile-friendly websites for schools, tuition centers, clinics, restaurants, 
+              shops, and local businesses. Premium quality, affordable prices, fast delivery.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a
+                href="#portfolio"
+                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-primary to-accent px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-primary/25 transition-all hover:shadow-2xl hover:shadow-primary/30 hover:scale-[1.02]"
+              >
+                View Templates <ArrowRight size={20} />
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 rounded-xl border-2 border-border bg-surface px-8 py-4 text-lg font-semibold text-text transition-all hover:border-primary/50 hover:text-primary"
+              >
+                Get a Free Demo
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 rounded-xl border-2 border-border bg-surface px-8 py-4 text-lg font-semibold text-text transition-all hover:border-primary/50 hover:text-primary"
+              >
+                Contact Us
+              </a>
+            </div>
+            <div className="mt-8 flex items-center gap-6 text-sm text-text-secondary">
+              <div className="flex -space-x-2">
+                {[1,2,3].map(i => (
+                  <div key={i} className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-surface bg-gradient-to-br from-primary to-accent text-[10px] font-bold text-white">T</div>
+                ))}
               </div>
-              <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-text sm:text-5xl md:text-6xl lg:text-7xl">
-                Modern Websites for{' '}
-                <span className="gradient-text">Local Businesses</span>
-              </h1>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-text-secondary">
-                We build beautiful, fast, and affordable websites that help local businesses 
-                stand out online. From tuition centers to restaurants — we create your digital presence.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <a
-                  href="#contact"
-                  className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-primary to-accent px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-primary/25 transition-all hover:shadow-2xl hover:shadow-primary/30 hover:scale-[1.02]"
-                >
-                  Get Your Website <ArrowRight size={20} />
-                </a>
-                <a
-                  href="#portfolio"
-                  className="inline-flex items-center gap-2 rounded-xl border-2 border-border bg-surface px-8 py-4 text-lg font-semibold text-text transition-all hover:border-primary/50 hover:text-primary"
-                >
-                  View Our Work
-                </a>
-              </div>
-              <div className="mt-8 flex items-center gap-6 text-sm text-text-secondary">
-                <div className="flex -space-x-2">
-                  {[1,2,3].map(i => (
-                    <div key={i} className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-surface bg-gradient-to-br from-primary to-accent text-[10px] font-bold text-white">T</div>
-                  ))}
-                </div>
-                <span>Trusted by local businesses</span>
-              </div>
-            </AnimateOnScroll>
-          </div>
+              <span>Trusted by local businesses</span>
+            </div>
+          </AnimateOnScroll>
 
           {/* Hero visual */}
           <AnimateOnScroll>
